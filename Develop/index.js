@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
 
- const questions = ([
+const questions = ([
     {
         type: 'input',
         message: 'What is you GitHub username',
@@ -24,7 +24,7 @@ const inquirer = require('inquirer');
         type: 'list',
         message: 'What kind of license should your project have ?',
         name: 'licences',
-        choices :['MIT','APACHE 2.0','GPL 3.0','BSD 3','None']
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
     },
     {
         type: 'input',
@@ -49,14 +49,16 @@ const inquirer = require('inquirer');
 ])
 inquirer
     .prompt(questions)
-// .then(console.log(questions));
- 
-// TODO: Create a function to write README file
-const filename = `${data.title.toLowerCase().split('').join('')}.md`;
+    // .then(console.log(questions));
+
+    // TODO: Create a function to write README file
+    .then((data) => {
+        const filename = `${data.title.toLowerCase().split('').join('')}.md`;
 
         fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-          err ? console.log(err) : console.log('Success!')
-      )
+            err ? console.log(err) : console.log('Success!')
+        );
+    })
 // // TODO: Create a function to initialize app
 // function init() {}
 

@@ -9,8 +9,13 @@ const writeFile = require("./utils/generateMarkdown.js")
 const questions = ([
     {
         type: 'input',
-        message: 'What is you GitHub username',
+        message: 'What is your GitHub username',
         name: 'username',
+    },
+    {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'email',
     },
     {
         type: 'input',

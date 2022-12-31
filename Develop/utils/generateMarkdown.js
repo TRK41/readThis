@@ -1,16 +1,16 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license === 'MIT'){
+  if (data.license === 'MIT'){
     data.licenseBadge = 'MIT';
   }
-  if (license === 'APACHE 2.0'){
+  if (data.license === 'APACHE 2.0'){
     data.licenseBadge = 'APACHE 2.0';
   }
-  if (license === 'GPL 3.0'){
+  if (data.license === 'GPL 3.0'){
     data.licenseBadge = 'GPLv3';
   }
-  if (license === 'BSD 3'){
+  if (data.license === 'BSD 3'){
     data.licenseBadge = 'BSD3';
   }
   else{
@@ -23,16 +23,16 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink (license) {  
   
-  if (license === 'MIT'){
+  if (data.license === 'MIT'){
   data.licenseLink = 'mit';
 }
-if (license === 'APACHE 2.0'){
+if (data.license === 'APACHE 2.0'){
   data.licenseLink = 'apache-2.0';
 }
-if (license === 'GPL 3.0'){
+if (data.license === 'GPL 3.0'){
   data.licenseLink = 'gpl-3.0';
 }
-if (license === 'BSD 3'){
+if (data.license === 'BSD 3'){
   data.licenseLink = 'bsd-3.0';
 }
 else{
@@ -48,6 +48,7 @@ function renderLicenseSection (license) {
   if (!data.license){
     "";
   }
+  
 };
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -55,7 +56,9 @@ function generateMarkdown(data) {
   # ${data.title}
 
   ## License
-  ${data.licenses}
+  ${data.license}
+  ${data.licenseBadge}
+  ${data.licenseLink}
   
   ## Description
   ${data.description}

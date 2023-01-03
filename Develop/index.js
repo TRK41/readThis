@@ -2,9 +2,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-const renderLicenseBadge= require('./utils/generateMarkdown.js');
-const renderLicenseLink = require('./utils/generateMarkdown.js');
-const renderLicenseSection = require('./utils/generateMarkdown.js');
 // const writeFile = require("./utils/generateMarkdown.js")
 
 // TODO: Create an array of questions for user input

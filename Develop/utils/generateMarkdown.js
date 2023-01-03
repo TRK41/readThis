@@ -52,19 +52,28 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
 
-  if (!license.license) {
-    "";
+  if (license === 'MIT') {
+    licenseSection = 'MIT';
   }
+  if (license === 'APACHE 2.0') {
+    licenseSection= 'APACHE 2.0';
+  }
+  if (license === 'GPL 3.0') {
+    licenseSection= 'GPL 3.0';
+  }
+  if (license === 'BSD 3') {
+    licenseSection = 'BSD 3';
+  }
+  if (license === 'None') {
+    licenseSection= '';
+  }
+  return (`${licenseSection}`);
 
 };
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
-
-  ## License
-  ${data.license}
-
   
   [![License]${renderLicenseBadge(data.license)}]${renderLicenseLink(data.license)}
   
@@ -77,6 +86,7 @@ function generateMarkdown(data) {
   -[Usage](#usage)
   -[Contributions](#contributing)
   -[Tests](#tests)
+  -[License](#license)
   -[Questions](#questions)
 
   ## Installation
@@ -92,6 +102,9 @@ function generateMarkdown(data) {
   ## Tests
   ${data.test}
 
+  ## License
+  ${renderLicenseSection(data.license)}
+
   ## Questions
   Here is a link to my GitHub Profile https://github.com/${data.username}\n
   You can reach me at my email ${data.email} if you have any other questions.
@@ -102,4 +115,4 @@ function generateMarkdown(data) {
 
 }
 
-module.exports = generateMarkdown, renderLicenseSection, renderLicenseLink, renderLicenseBadge;
+module.exports = generateMarkdown;
